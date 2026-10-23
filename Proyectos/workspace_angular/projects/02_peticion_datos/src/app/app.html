@@ -1,0 +1,12 @@
+<div>
+  <p>Introduce tu nombre: <input type="text" [(ngModel)]="nombre"></p>
+  <p>Introduce tu edad: <input type="number" [(ngModel)]="edad"></p>
+  <p><button (click)="mostrar()">Mostrar</button></p>
+
+  @if(mensaje){
+  <div>
+    <h2>Mensaje para el usuario</h2>
+    <h3>{{ mensaje }}</h3>
+  </div>
+  }
+</div>

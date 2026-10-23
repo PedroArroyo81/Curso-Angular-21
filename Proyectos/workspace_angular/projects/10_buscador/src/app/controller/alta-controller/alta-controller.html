@@ -1,0 +1,29 @@
+<div class="container">
+  <H1>Formulario para nuevos items</H1>
+
+  <form #formItems="ngForm" name="form" (ngSubmit)="guardar(formItems)">
+    Introduce url:<input type="text" required name="url" #url="ngModel" [ngModel]="item().url"
+      (ngModelChange)="item.update(c => ({ ...c, url: $event }))"><br><br>
+      @if (url.invalid && error) {
+        <span>Es obligatorio indicar una url</span>
+      }
+
+    Introduce temática:<input type="text" name="tematica" required #tematica="ngModel" [ngModel]="item().tematica"
+      (ngModelChange)="item.update(c => ({ ...c, tematica: $event }))"><br><br>
+      @if(tematica.invalid) {
+        <span>Es obligatorio indicar una temática</span>
+      }
+
+    Introduce descripción:<input type="text" name="descripcion" required minlength="10" #descripcion="ngModel" [ngModel]="item().descripcion"
+      (ngModelChange)="item.update(c => ({ ...c, descripcion: $event }))"><br><br>
+      @if(descripcion.invalid) {
+        @if(descripcion.errors["required"]) {
+          <span>Es obligatorio indicar una descripción</span>
+        } @else {
+          <span>La descripción debe tener por lo menos 10 caracteres</span>
+        }
+      }
+
+    <input type="submit" name="guardar" value="Guardar"><br>
+  </form>
+</div>

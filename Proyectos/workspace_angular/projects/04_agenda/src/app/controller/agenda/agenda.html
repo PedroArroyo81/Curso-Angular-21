@@ -1,0 +1,22 @@
+<div>
+  <p>Introduce nombre: <input type="text" [(ngModel)]="contacto.nombre"></p>
+  <p>Introduce teléfono: <input type="text" [(ngModel)]="contacto.telefono"></p>
+  <p>Introduce edad: <input type="number" [(ngModel)]="contacto.edad"></p>
+  <input type="button" value="Guardar" (click)="guardar()"><br><br>
+  <input type="button" [value]="textoBtn" (click)="verHistorico()"><br><br>
+
+  @if (show) {
+  <table border="1">
+    <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Edad</th>
+    @for(op of historico; track op) {
+      <tr>
+        <td>{{ op.getNombre() }}</td>
+        <td>{{ op.getTelefono() }}</td>
+        <td>{{ op.getEdad() }}</td>
+      </tr>
+    }
+  </table>
+  }
+</div>

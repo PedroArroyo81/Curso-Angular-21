@@ -1,0 +1,105 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/02_peticion_datos/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/02_peticion_datos/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/03_calculadora/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/03_calculadora/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/04_agenda/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/04_agenda/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/05_agenda_servicio/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/05_agenda_servicio/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/05_agenda_service/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/05_agenda_service/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/06_agenda_observables/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/06_agenda_observables/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/07_buscador/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/07_buscador/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/08_http_fake/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/08_http_fake/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/09_thhp_continentes/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/09_thhp_continentes/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/10_buscador/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/10_buscador/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/11_buscador_reactivo/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/11_buscador_reactivo/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/12_ejercicio_formulario/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/12_ejercicio_formulario/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/13_formulario_signal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/13_formulario_signal/tsconfig.spec.json"
+    }
+  ]
+}

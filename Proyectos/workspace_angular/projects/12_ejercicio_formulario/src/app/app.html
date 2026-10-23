@@ -1,0 +1,55 @@
+<div>
+  <form [formGroup]="miForm" (ngSubmit)="enviar()">
+      <label>Usuario</label>
+      <input type="text" formControlName="usuario">
+      @if(miForm.get("usuario").invalid && error){
+        <span>Usuario requerido</span>
+      }
+    <br><br>
+      <label>Password</label>
+      <input type="password" formControlName="password">
+      @if(miForm.get("password").invalid && error){
+        @if(miForm.get("password").hasError("required")){
+          <span>Password requerido</span> 
+        }@else{
+          <span>Caracteres mínimos 6</span>
+        }
+      }
+    <br><br>
+      <label>Email</label>
+      <input type="email" formControlName="email">
+      @if(miForm.get("email").invalid && error){
+        @if(miForm.get("email").hasError("required")){
+          <span>Email requerido</span> 
+        }@else{
+          <span>Email formato inválido</span>
+        }
+      }
+    <br><br>
+      <label>Telefono</label>
+      <input type="phone" formControlName="telefono">
+      @if(miForm.get("telefono").invalid && error){
+        @if(miForm.get("telefono").hasError("required")){
+          <span>Telefono requerido</span> 
+        }@else{
+          <span>Telefono formato inválido</span>
+        }
+      }
+    <br><br>
+      <label>Uso profesional</label>
+      <input type="checkbox"  formControlName="uso_profesional">
+    <br><br>
+      <label>Instagram</label>
+      <input type="text" formControlName="instagram">
+      @if(miForm.get("instagram").invalid && error){
+        @if(miForm.get("instagram").hasError("required")){
+          <span>Instagram requerido</span> 
+        }@else{
+          <span>Instagram formato inválido debe incluir @</span>
+        }
+      }
+    <br><br><br>
+    <input type="submit" value="Enviar"><br>
+  </form>
+</div>
+<router-outlet />

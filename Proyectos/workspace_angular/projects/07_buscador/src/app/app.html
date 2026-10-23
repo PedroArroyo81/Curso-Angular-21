@@ -1,0 +1,30 @@
+<div>
+  <h2>Consulta de recursos por temática</h2>
+  <p>
+    <select name="comboTematica" [(ngModel)]="tematica" (change)="buscar()">
+      <option value="" disabled selected>Seleccione una opción</option>
+      @for(tematica of tematicas; track tematica){
+      <option value="{{ tematica }}">{{ tematica }}</option>
+      }
+    </select>
+  </p>
+</div>
+
+<div>
+  @if (resultados.length > 0) {
+  <table border="1">
+    <th>Url</th>
+    <th>Tematica</th>
+    <th>Descripcion</th>
+    <th>Fecha</th>
+    @for(res of resultados; track res) {
+    <tr>
+      <td>{{ res.url }}</td>
+      <td>{{ res.tematica }}</td>
+      <td>{{ res.descripcion }}</td>
+      <td>{{ res.fecha | date }}</td>
+    </tr>
+    }
+  </table>
+  }
+</div>
