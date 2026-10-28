@@ -2,6 +2,8 @@ import { Component, signal } from '@angular/core';
 import { Item } from '../../model/Item';
 import { BuscadorService } from '../../service/buscador-service';
 import { FormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog } from '../dialog/dialog';
 
 @Component({
   selector: 'app-alta-controller',
@@ -12,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class AltaController {
   item = signal<Item>({ "url": "", "tematica": "", "descripcion": "" });
   //item:Item={"url":"","tematica":"","descripcion":""}; //en caso de no haber utilizado signal
-  constructor(private buscadorService: BuscadorService) { }
+  constructor(private buscadorService: BuscadorService, private matDialog: MatDialog) { }
 
   error: boolean = false;
 
@@ -21,13 +23,22 @@ export class AltaController {
       this.error = false;
       this.buscadorService.nuevoItem(this.item())
         .subscribe({
-          next: data => alert("Nuevo elemento almacenado"),
-          error: err => alert("No se pudo añadir, URL repetida")
+          next: data => this.matDialog.open(Dialog, {
+            data: {
+              titulo: "Aviso",
+              mensaje: "Nuevo elemento almacenado"
+            }
+          }),
+          error: err => this.matDialog.open(Dialog, {
+            data: {
+              titulo: "Aviso",
+              mensaje: "No se pudo añadir, URL repetida"
+            }
+          })
         });
     } else {
       this.error = true;
       alert("El formulario no es válido");
     }
   }
-
 }

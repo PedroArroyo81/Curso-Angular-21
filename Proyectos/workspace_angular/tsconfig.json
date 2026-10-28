@@ -100,6 +100,12 @@
     },
     {
       "path": "./projects/13_formulario_signal/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/14_paises_datetable/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/14_paises_datetable/tsconfig.spec.json"
     }
   ]
 }
